@@ -43,30 +43,29 @@
 		
 			<div class="col-md-12">
 		 		<label class="" for="">signature</label>
-		 		</canvas>
-		 	</div>
+			</br>
+		 	<div id="sig">
 		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
-				<button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
-			</div>
-		</div>
-		<br/>
-		<div class="row">
-			<div class="col-md-12">
-				<textarea id="sig-dataUrl" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
-			</div>
+	</br>
+		
+				<button class="btn btn-primary" id="clear">clear  Signature</button>
+				<textarea id="signature64" class="form-control" name="signed" style="display:none"></textarea>
+				
 		</div>
 		<br/>
-		<div class="row">
-			<div class="col-md-12">
-				<img id="sig-image" src="" alt="Your signature will go here!"/>
-			</div>
+		<button class= "btn btn-primary">Submit</button>
+	</form>
 		</div>
-	</div>
-</form>
-    
+		
+    <script type="text/javascript">
+		var sig = $('sig'). signature({syncField: '#signature64' , syncFormat: 'PNG'});
+		$('#clear') . click(function(e){
+			e.preventDefault();
+			sig.signature('clear');
+			$("#signature64").val('');
+
+		});
+	</script>
     
 </body>
 </html>
