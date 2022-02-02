@@ -22,5 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
  Route::get('apilist/{id}' , [MyApi::class, 'show']);
- Route::post('addlink' , [MyApi::class, 'add']);
+ Route::post('addlink' , [MyApi::class, 'add']); // for save the  data
+ Route::put('updatedata/' , [MyApi::class , 'update']); // for update  route
+ Route::get('searchdata/{$name}' , [MyApi::class , 'search']); // for search data
+  Route::delete('deletedata/{id}' , [MyApi::class , 'delete']); // for delete data
 
